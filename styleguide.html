@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Design System — Habit Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Moderustic:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+<style>
+  body { display: block; }
+  .layout { display: flex; align-items: flex-start; }
+  .sidebar {
+    position: fixed; left: 0; top: 0; bottom: 0; width: 200px; flex-shrink: 0;
+    padding: 32px 20px; display: flex; flex-direction: column; gap: 4px;
+    border-right: 1px solid var(--color-ink-15); background: var(--color-bg);
+    overflow-y: auto;
+  }
+  .sidebar a {
+    color: var(--color-muted); text-decoration: none; font-size: var(--text-label);
+    font-weight: var(--font-weight-medium); padding: 6px 8px; border-radius: var(--radius-sm);
+  }
+  .sidebar a:hover { background: var(--color-ink-8); color: var(--color-ink); }
+  .sidebar .brand { font-size: var(--text-title); font-weight: var(--font-weight-semibold); color: var(--color-ink); margin-bottom: 16px; letter-spacing: -0.02em; }
+  main { flex: 1; padding: 48px 56px 120px; max-width: 1040px; margin-left: 200px; }
+  section { margin-bottom: 72px; scroll-margin-top: 24px; }
+  section h2 { font-size: var(--text-title); font-weight: var(--font-weight-semibold); margin: 0 0 8px; color: var(--color-ink); }
+  section > p.lede { color: var(--color-muted); font-size: var(--text-body); margin: 0 0 24px; }
+  .grid { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 160px; border-radius: var(--radius-md); border: 1px solid var(--color-ink-15); overflow: hidden; }
+  .swatch .fill { height: 72px; }
+  .swatch .info { padding: 12px; background: var(--color-surface); }
+  .swatch .name { font-size: var(--text-label); font-weight: var(--font-weight-semibold); color: var(--color-ink); display: block; }
+  .swatch .hex { font-size: var(--text-caption); color: var(--color-muted); }
+  .tint { width: 150px; height: 96px; border-radius: var(--radius-md); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
+  .tint.on-light { border: 1px solid var(--color-ink-15); }
+  .tint.on-dark { background: var(--color-ink); }
+  .tint .chip { width: 40px; height: 40px; border-radius: var(--radius-sm); }
+  .tint .label { font-size: var(--text-caption); font-weight: var(--font-weight-medium); }
+  .type-card { background: var(--color-surface); border-radius: var(--radius-md); padding: 20px; display: flex; flex-direction: column; gap: 16px; }
+  .type-row { display: flex; align-items: center; gap: 16px; }
+  .type-row .sample { width: 280px; flex-shrink: 0; color: var(--color-ink); }
+  .type-row .desc { color: var(--color-muted); font-size: var(--text-label); }
+  .space-row { display: flex; align-items: flex-end; gap: 20px; }
+  .space-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .space-item .bar { width: 24px; background: var(--color-ink); border-radius: 2px; }
+  .space-item .label { font-size: var(--text-caption); color: var(--color-muted); }
+  .radius-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .radius-item .block { width: 64px; height: 64px; background: var(--color-ink); }
+  .radius-item .label { font-size: var(--text-caption); color: var(--color-muted); }
+  .component-demo { background: var(--color-surface); border-radius: var(--radius-md); padding: 24px; display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; }
+  .component-demo.dark { background: var(--color-bg); }
+  .pattern-demo { background: var(--color-bg); border-radius: var(--radius-md); padding: 24px; border: 1px solid var(--color-ink-15); }
+  .pattern-demo .habit-list, .pattern-demo .settings-list { max-width: 340px; }
+  .screen-links { display: flex; gap: 16px; }
+  a.screen-link {
+    display: block; width: 160px; padding: 16px; text-align: center;
+    background: var(--color-surface); border-radius: var(--radius-md);
+    text-decoration: none; color: var(--color-ink); font-weight: var(--font-weight-medium);
+    border: 1px solid var(--color-ink-15);
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+  <nav class="sidebar">
+    <span class="brand">Design System</span>
+    <a href="#colors">Colors</a>
+    <a href="#typography">Typography</a>
+    <a href="#spacing">Spacing &amp; radius</a>
+    <a href="#components">Components</a>
+    <a href="#patterns">Patterns</a>
+    <a href="#screens">Full screens</a>
+  </nav>
+
+  <main>
+    <section id="colors">
+      <h2>Colors</h2>
+      <p class="lede">Core palette, then opacity-derived tints — no separate hex values, just the core colors at reduced alpha.</p>
+
+      <div class="grid" style="margin-bottom: 12px;">
+        <div class="swatch"><div class="fill" style="background: var(--color-bg);"></div><div class="info"><span class="name">bg</span><span class="hex">#F3F3F3</span></div></div>
+        <div class="swatch"><div class="fill" style="background: var(--color-surface);"></div><div class="info"><span class="name">surface</span><span class="hex">#FFFFFF</span></div></div>
+        <div class="swatch"><div class="fill" style="background: var(--color-ink);"></div><div class="info"><span class="name">ink</span><span class="hex">#1F1F1F · primary</span></div></div>
+        <div class="swatch"><div class="fill" style="background: var(--color-muted);"></div><div class="info"><span class="name">muted</span><span class="hex">#4C4C4C · secondary text</span></div></div>
+        <div class="swatch"><div class="fill" style="background: var(--color-accent-primary);"></div><div class="info"><span class="name">accent primary</span><span class="hex">#D800A0 · sparingly</span></div></div>
+        <div class="swatch"><div class="fill" style="background: var(--color-accent-secondary);"></div><div class="info"><span class="name">accent secondary</span><span class="hex">#370026 · surfaces</span></div></div>
+      </div>
+
+      <div class="grid">
+        <div class="tint on-light"><div class="chip" style="background: var(--color-ink-8);"></div><span class="label" style="color: var(--color-ink);">ink-8 · chips</span></div>
+        <div class="tint on-light"><div class="chip" style="background: var(--color-ink-15);"></div><span class="label" style="color: var(--color-ink);">ink-15 · borders</span></div>
+        <div class="tint on-light"><div class="chip" style="background: var(--color-ink-35);"></div><span class="label" style="color: var(--color-ink);">ink-35 · inactive</span></div>
+        <div class="tint on-dark"><div class="chip" style="background: var(--color-snow-65);"></div><span class="label" style="color: var(--color-bg);">snow-65 · text on ink</span></div>
+        <div class="tint on-dark"><div class="chip" style="background: var(--color-snow-15);"></div><span class="label" style="color: var(--color-bg);">snow-15 · track on ink</span></div>
+      </div>
+    </section>
+
+    <section id="typography">
+      <h2>Typography — Moderustic</h2>
+      <p class="lede">Five sizes, three weights. Tight tracking on the display size, wide tracking on uppercase labels.</p>
+      <div class="type-card">
+        <div class="type-row"><span class="sample" style="font-size: var(--text-display); font-weight: var(--font-weight-semibold); letter-spacing: -0.02em;">Display 32</span><span class="desc">semibold · tight tracking · greeting, hero numbers</span></div>
+        <div class="type-row"><span class="sample" style="font-size: var(--text-title); font-weight: var(--font-weight-semibold);">Title 22</span><span class="desc">semibold · card headlines, stat values</span></div>
+        <div class="type-row"><span class="sample" style="font-size: var(--text-body); font-weight: var(--font-weight-medium);">Body 15</span><span class="desc">medium · list labels, primary content</span></div>
+        <div class="type-row"><span class="sample" style="font-size: var(--text-label); font-weight: var(--font-weight-semibold); letter-spacing: 0.08em; text-transform: uppercase;">Label 13</span><span class="desc">semibold uppercase · section labels; regular · captions</span></div>
+        <div class="type-row"><span class="sample" style="font-size: var(--text-caption); font-weight: var(--font-weight-medium);">Caption 11</span><span class="desc">medium/semibold · tab bar labels only</span></div>
+      </div>
+    </section>
+
+    <section id="spacing">
+      <h2>Spacing &amp; radius</h2>
+      <p class="lede">Spacing isn't tokenized as CSS variables yet — these are the actual gap/padding values in use across <code>components.css</code>, shown here for reference.</p>
+      <div class="space-row" style="margin-bottom: 32px;">
+        <div class="space-item"><div class="bar" style="height: 4px;"></div><span class="label">4</span></div>
+        <div class="space-item"><div class="bar" style="height: 10px;"></div><span class="label">10</span></div>
+        <div class="space-item"><div class="bar" style="height: 14px;"></div><span class="label">14</span></div>
+        <div class="space-item"><div class="bar" style="height: 16px;"></div><span class="label">16</span></div>
+        <div class="space-item"><div class="bar" style="height: 22px;"></div><span class="label">22</span></div>
+        <div class="space-item"><div class="bar" style="height: 24px;"></div><span class="label">24</span></div>
+      </div>
+      <div class="grid">
+        <div class="radius-item"><div class="block" style="border-radius: var(--radius-sm);"></div><span class="label">sm 12 · chips</span></div>
+        <div class="radius-item"><div class="block" style="border-radius: var(--radius-md);"></div><span class="label">md 16 · rows</span></div>
+        <div class="radius-item"><div class="block" style="border-radius: var(--radius-lg);"></div><span class="label">lg 20 · hero cards</span></div>
+        <div class="radius-item"><div class="block" style="border-radius: var(--radius-full);"></div><span class="label">full · avatars, controls</span></div>
+      </div>
+    </section>
+
+    <section id="components">
+      <h2>Components</h2>
+      <p class="lede">Shared classes from <code>components.css</code>, matching the reusable components built in Pencil.</p>
+
+      <p class="lede" style="margin-bottom:8px; font-weight: var(--font-weight-semibold); color: var(--color-ink); text-transform: uppercase; font-size: var(--text-label); letter-spacing: 0.08em;">Avatar</p>
+      <div class="component-demo" style="margin-bottom: 24px;">
+        <div class="avatar">E</div>
+        <div class="avatar avatar--lg">E</div>
+      </div>
+
+      <p class="lede" style="margin-bottom:8px; font-weight: var(--font-weight-semibold); color: var(--color-ink); text-transform: uppercase; font-size: var(--text-label); letter-spacing: 0.08em;">Stat tile</p>
+      <div class="component-demo" style="margin-bottom: 24px;">
+        <div class="stat-tile" style="width: 140px;"><span class="value">12</span><span class="caption">Day streak</span></div>
+      </div>
+
+      <p class="lede" style="margin-bottom:8px; font-weight: var(--font-weight-semibold); color: var(--color-ink); text-transform: uppercase; font-size: var(--text-label); letter-spacing: 0.08em;">Habit row (done / pending / ghost)</p>
+      <div class="component-demo" style="flex-direction: column; margin-bottom: 24px;">
+        <div class="habit-row" style="width: 340px;">
+          <div class="habit-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l2.5 2.5"/></svg></div>
+          <div style="flex:1;"><div class="body-text">Meditate</div><div class="caption">10 min · Morning</div></div>
+          <div class="habit-check habit-check--done"><svg class="icon" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div>
+        </div>
+        <div class="habit-row" style="width: 340px;">
+          <div class="habit-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M4 5.5A2 2 0 0 1 6 3.5h11a1 1 0 0 1 1 1V19a1 1 0 0 1-1 1H6a2 2 0 0 1-2-2Z"/><path d="M8 3.5v17"/></svg></div>
+          <div style="flex:1;"><div class="body-text">Read</div><div class="caption">20 pages · Evening</div></div>
+          <div class="habit-check habit-check--pending"></div>
+        </div>
+        <div class="habit-row habit-row--ghost" style="width: 340px;">
+          <svg class="icon" viewBox="0 0 24 24" style="width:20px;height:20px;"><path d="M12 5v14M5 12h14"/></svg>
+          <span class="body-text" style="color: var(--color-muted);">Add a habit</span>
+        </div>
+      </div>
+
+      <p class="lede" style="margin-bottom:8px; font-weight: var(--font-weight-semibold); color: var(--color-ink); text-transform: uppercase; font-size: var(--text-label); letter-spacing: 0.08em;">Settings row</p>
+      <div class="component-demo" style="margin-bottom: 24px;">
+        <div class="settings-list" style="width: 340px;">
+          <a class="settings-row" href="#"><svg class="icon" viewBox="0 0 24 24"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg><span class="body-text">Notifications</span><svg class="icon chevron" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></a>
+          <a class="settings-row" href="#" style="border-bottom: none;"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 3.5"/></svg><span class="body-text">Reminders</span><svg class="icon chevron" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></a>
+        </div>
+      </div>
+
+      <p class="lede" style="margin-bottom:8px; font-weight: var(--font-weight-semibold); color: var(--color-ink); text-transform: uppercase; font-size: var(--text-label); letter-spacing: 0.08em;">Card &amp; hero card</p>
+      <div class="component-demo dark">
+        <div class="card" style="width: 200px;"><span class="body-text">Card</span><span class="caption">surface, radius-md</span></div>
+        <div class="card--hero" style="margin: 0; width: 260px;">
+          <div><div class="eyebrow">Hero card</div><div style="font-size: var(--text-title); font-weight: var(--font-weight-semibold); margin-top: 6px;">Sample</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="patterns">
+      <h2>Patterns</h2>
+      <p class="lede">Composed groupings — how the components stack into real UI sections.</p>
+
+      <p class="lede" style="margin-bottom:8px; font-weight: var(--font-weight-semibold); color: var(--color-ink); text-transform: uppercase; font-size: var(--text-label); letter-spacing: 0.08em;">Tab bar</p>
+      <div class="pattern-demo" style="margin-bottom: 24px; padding: 0; overflow: hidden;">
+        <nav class="tab-bar" style="margin: 0;">
+          <a class="tab tab--active" href="#"><svg class="icon" viewBox="0 0 24 24"><path d="M4 11.5 12 4l8 7.5"/><path d="M6 10v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-9"/></svg>Home</a>
+          <a class="tab tab--inactive" href="#"><svg class="icon" viewBox="0 0 24 24"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 15l4-5 3 3 5-7"/></svg>Stats</a>
+          <a class="tab tab--inactive" href="#"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20c1.2-4 4-6 7.5-6s6.3 2 7.5 6"/></svg>Profile</a>
+        </nav>
+      </div>
+
+      <p class="lede" style="margin-bottom:8px; font-weight: var(--font-weight-semibold); color: var(--color-ink); text-transform: uppercase; font-size: var(--text-label); letter-spacing: 0.08em;">Progress bars (Stats &gt; By habit)</p>
+      <div class="pattern-demo">
+        <div style="max-width: 300px; display:flex; flex-direction:column; gap:6px;">
+          <div style="display:flex; justify-content:space-between;"><span class="body-text">Drink water</span><span class="caption">86%</span></div>
+          <div class="progress-track"><div class="progress-fill" style="width:86%;"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="screens">
+      <h2>Full screens</h2>
+      <p class="lede">The patterns above assembled into complete app screens.</p>
+      <div class="screen-links">
+        <a class="screen-link" href="home.html">Home</a>
+        <a class="screen-link" href="stats.html">Stats</a>
+        <a class="screen-link" href="profile.html">Profile</a>
+      </div>
+    </section>
+  </main>
+</div>
+</body>
+</html>

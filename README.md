@@ -10,7 +10,11 @@ kept as a **consumer** of this repo, not the other way around.
   Edit values here.
 - `components.css` — semantic component classes built from the tokens.
 - `home.html`, `stats.html`, `profile.html` — the three app screens.
-- `index.html` — links to all three, for a quick visual check in a browser.
+- `styleguide.html` — browsable design system doc: colors, typography,
+  spacing/radius, components, and patterns, all rendered live from
+  `tokens.css`/`components.css` (not screenshots).
+- `index.html` — links to the styleguide and all three screens, for a
+  quick visual check in a browser.
 - `.design-sync-snapshot.css` — a copy of `tokens.css` as of the last
   successful push into Pencil. Don't edit this by hand; it's maintained by
   the sync process below.
