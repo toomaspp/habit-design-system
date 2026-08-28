@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-Diffs tokens.css against .paper-sync-snapshot.css and prints the added /
-changed / removed tokens as JSON, ready for Claude to push into Paper via
-the create_tokens / set_tokens MCP tools.
+Diffs tokens.css against .design-sync-snapshot.css and prints the added /
+changed / removed tokens as JSON, ready for Claude to push into Pencil
+(pen.dev) via its GetVariables / SetVariables execute-tool functions.
 
-This script does NOT talk to Paper directly (MCP tools are only reachable
+This script does NOT talk to Pencil directly (its tools are only reachable
 from Claude's own tool-calling session) - it just computes the diff.
 
 Usage: python3 sync-tokens.py
@@ -18,12 +18,12 @@ TOKEN_RE = re.compile(r"^\s*(--[\w-]+)\s*:\s*(.+?)\s*;\s*$")
 
 TYPE_PREFIXES = [
     ("--color-", "color"),
-    ("--font-weight-", "fontWeight"),
-    ("--font-", "fontFamily"),
-    ("--text-", "fontSize"),
-    ("--tracking-", "letterSpacing"),
-    ("--leading-", "lineHeight"),
-    ("--radius-", "radius"),
+    ("--font-weight-", "string"),
+    ("--font-", "string"),
+    ("--text-", "number"),
+    ("--tracking-", "number"),
+    ("--leading-", "number"),
+    ("--radius-", "number"),
 ]
 
 
@@ -48,7 +48,7 @@ def parse_tokens(path):
 def main():
     root = Path(__file__).parent
     current = parse_tokens(root / "tokens.css")
-    snapshot = parse_tokens(root / ".paper-sync-snapshot.css")
+    snapshot = parse_tokens(root / ".design-sync-snapshot.css")
 
     added = [
         {"type": token_type(name), "name": name, "value": value}
@@ -65,7 +65,7 @@ def main():
     result = {"added": added, "changed": changed, "removed": removed}
 
     if not added and not changed and not removed:
-        print("No changes since last Paper sync.")
+        print("No changes since last Pencil sync.")
     else:
         print(json.dumps(result, indent=2))
 
