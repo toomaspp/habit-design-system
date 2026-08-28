@@ -1,0 +1,46 @@
+/*
+  Design tokens for the habit-tracker app.
+  Source of truth — edit here, then sync into Paper with sync-tokens.py + Claude.
+  Do not hand-edit values in Paper and expect them to persist; see README.md.
+*/
+
+:root {
+  /* Neutrals */
+  --color-bg: #F3F3F3;
+  --color-surface: #FFFFFF;
+  --color-muted: #4C4C4C;
+
+  /* Primary (ink) */
+  --color-ink: #1F1F1F;
+  --color-ink-8: #1F1F1F14;
+  --color-ink-15: #1F1F1F26;
+  --color-ink-35: #1F1F1F59;
+
+  /* Snow (on-ink surfaces) */
+  --color-snow-65: rgb(250 250 248 / 65%);
+  --color-snow-15: rgb(250 250 248 / 15%);
+
+  /* Accents */
+  --color-accent-primary: #D800A0;
+  --color-accent-secondary: #370026;
+
+  /* Type */
+  --font-sans: "Open Sans", system-ui, sans-serif;
+  --text-caption: 11px;
+  --text-label: 13px;
+  --text-body: 15px;
+  --text-title: 22px;
+  --text-display: 32px;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --tracking-tight: -0.02em;
+  --tracking-wide: 0.08em;
+  --leading-tight: 1.1;
+
+  /* Radius */
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-full: 999px;
+}
