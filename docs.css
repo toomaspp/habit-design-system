@@ -43,9 +43,9 @@ section > p.lede { color: var(--color-muted); font-size: var(--text-body); margi
 
 .grid { display: flex; flex-wrap: wrap; gap: 12px; }
 
-.swatch { width: 160px; border-radius: var(--radius-md); border: 1px solid var(--color-ink-15); overflow: hidden; }
-.swatch .fill { height: 72px; }
-.swatch .info { padding: 12px; background: var(--color-surface); }
+.swatch { width: 160px; border-radius: var(--radius-md); border: 1px solid var(--color-ink-15); overflow: hidden; display: flex; flex-direction: column; }
+.swatch .fill { height: 72px; flex-shrink: 0; }
+.swatch .info { flex: 1; padding: 12px; background: var(--color-surface); }
 .swatch .name { font-size: var(--text-label); font-weight: var(--font-weight-semibold); color: var(--color-ink); display: block; }
 .swatch .hex { font-size: var(--text-caption); color: var(--color-muted); }
 
