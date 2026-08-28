@@ -24,6 +24,7 @@ TYPE_PREFIXES = [
     ("--tracking-", "number"),
     ("--leading-", "number"),
     ("--radius-", "number"),
+    ("--space-", "number"),
 ]
 
 

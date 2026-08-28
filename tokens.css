@@ -1,7 +1,7 @@
 /*
   Design tokens for the habit-tracker app.
-  Source of truth — edit here, then sync into Paper with sync-tokens.py + Claude.
-  Do not hand-edit values in Paper and expect them to persist; see README.md.
+  Source of truth — edit here, then sync into Pencil with sync-tokens.py + Claude.
+  Do not hand-edit values in Pencil and expect them to persist; see README.md.
 */
 
 :root {
@@ -43,4 +43,13 @@
   --radius-md: 16px;
   --radius-lg: 20px;
   --radius-full: 999px;
+
+  /* Spacing — every step divisible by 4 */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 20px;
+  --space-2xl: 24px;
+  --space-3xl: 28px;
 }

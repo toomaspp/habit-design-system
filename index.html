@@ -56,14 +56,15 @@
 
     <section id="spacing">
       <h2>Spacing &amp; radius</h2>
-      <p class="lede">Spacing isn't tokenized as CSS variables yet — these are the actual gap/padding values in use across <code>components.css</code>, shown here for reference.</p>
+      <p class="lede">A 4px-based scale — every step divisible by 4, from <code>--space-xs</code> to <code>--space-3xl</code>.</p>
       <div class="space-row" style="margin-bottom: 32px;">
-        <div class="space-item"><div class="bar" style="height: 4px;"></div><span class="label">4</span></div>
-        <div class="space-item"><div class="bar" style="height: 10px;"></div><span class="label">10</span></div>
-        <div class="space-item"><div class="bar" style="height: 14px;"></div><span class="label">14</span></div>
-        <div class="space-item"><div class="bar" style="height: 16px;"></div><span class="label">16</span></div>
-        <div class="space-item"><div class="bar" style="height: 22px;"></div><span class="label">22</span></div>
-        <div class="space-item"><div class="bar" style="height: 24px;"></div><span class="label">24</span></div>
+        <div class="space-item"><div class="bar" style="height: var(--space-xs);"></div><span class="label">xs · 4</span></div>
+        <div class="space-item"><div class="bar" style="height: var(--space-sm);"></div><span class="label">sm · 8</span></div>
+        <div class="space-item"><div class="bar" style="height: var(--space-md);"></div><span class="label">md · 12</span></div>
+        <div class="space-item"><div class="bar" style="height: var(--space-lg);"></div><span class="label">lg · 16</span></div>
+        <div class="space-item"><div class="bar" style="height: var(--space-xl);"></div><span class="label">xl · 20</span></div>
+        <div class="space-item"><div class="bar" style="height: var(--space-2xl);"></div><span class="label">2xl · 24</span></div>
+        <div class="space-item"><div class="bar" style="height: var(--space-3xl);"></div><span class="label">3xl · 28</span></div>
       </div>
       <div class="grid">
         <div class="radius-item"><div class="block" style="border-radius: var(--radius-sm);"></div><span class="label">sm 12 · chips</span></div>
