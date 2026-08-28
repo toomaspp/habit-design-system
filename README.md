@@ -1,5 +1,7 @@
 # Habit Tracker — Design System
 
+**Live:** https://toomaspp.github.io/habit-design-system/
+
 Source of truth for the habit-tracker app's design tokens and screens.
 Developers consume this repo directly. The Pencil (pen.dev) design file is
 kept as a **consumer** of this repo, not the other way around.

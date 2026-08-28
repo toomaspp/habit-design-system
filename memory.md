@@ -1,5 +1,11 @@
 # Project memory — habit-design-system
 
+- **Repo is public**, with GitHub Pages live at
+  `https://toomaspp.github.io/habit-design-system/` (serving from `main`
+  branch root). This is now the easiest way to view the design system —
+  no local server needed, unlike opening files directly. Local preview
+  (`preview.command`, or the Claude Code preview server) is still useful
+  for checking changes before pushing.
 - Tech: plain HTML + CSS custom properties, no build tools, no JS framework
   beyond the tiny shared-nav fetch script. Matches the user's default
   web-prototype preferences.
