@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Avatar — Components</title>
+<script>const NAV_BASE = "../";</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Moderustic:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+<link rel="stylesheet" href="../docs.css">
+</head>
+<body>
+<div class="layout">
+  <nav class="sidebar" id="nav"></nav>
+  <main>
+    <span class="eyebrow">Component</span>
+    <h1 class="page-title">Avatar</h1>
+    <p class="page-lede">A circular identity marker showing the user's initial, on an accent-secondary fill.</p>
+
+    <section>
+      <h2>Preview</h2>
+      <div class="demo on-bg">
+        <div class="avatar">E</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Variants</h2>
+      <div class="demo on-bg">
+        <div class="variant"><div class="avatar">E</div><span class="variant-label">Default · 44px</span></div>
+        <div class="variant"><div class="avatar avatar--lg">E</div><span class="variant-label">Large · 72px</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Guidelines</h2>
+      <ul class="guidelines">
+        <li>Default size for anything alongside body text (headers, list rows); large size only for the Profile screen's own identity.</li>
+        <li>Always shows a single initial, uppercase, never a photo or icon.</li>
+        <li>Background is always <code>--color-accent-secondary</code> — it's the one place that color is used as a solid fill this large.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Code</h2>
+      <div class="code-block">&lt;div class="avatar"&gt;E&lt;/div&gt;
+&lt;div class="avatar avatar--lg"&gt;E&lt;/div&gt;</div>
+    </section>
+  </main>
+</div>
+<script src="../nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Habit row — Components</title>
+<script>const NAV_BASE = "../";</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Moderustic:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+<link rel="stylesheet" href="../docs.css">
+</head>
+<body>
+<div class="layout">
+  <nav class="sidebar" id="nav"></nav>
+  <main>
+    <span class="eyebrow">Component</span>
+    <h1 class="page-title">Habit row</h1>
+    <p class="page-lede">Icon, label, sub-label, and a trailing check control — the core building block of the habit list.</p>
+
+    <section>
+      <h2>Preview</h2>
+      <div class="demo on-bg">
+        <div class="habit-row" style="width: 340px;">
+          <div class="habit-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l2.5 2.5"/></svg></div>
+          <div style="flex:1;"><div class="body-text">Meditate</div><div class="caption">10 min · Morning</div></div>
+          <div class="habit-check habit-check--done"><svg class="icon" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Variants — check control states</h2>
+      <div class="demo on-bg" style="flex-direction: column;">
+        <div class="habit-row" style="width: 340px;">
+          <div class="habit-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M12 2.5s6 7 6 11.5a6 6 0 1 1-12 0c0-4.5 6-11.5 6-11.5Z"/></svg></div>
+          <div style="flex:1;"><div class="body-text">Drink water</div><div class="caption">8 glasses · All day</div></div>
+          <div class="habit-check habit-check--done"><svg class="icon" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div>
+        </div>
+        <span class="variant-label" style="align-self: flex-start;">Done — filled accent-primary circle with a check icon</span>
+        <div class="habit-row" style="width: 340px; margin-top: 12px;">
+          <div class="habit-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M4 5.5A2 2 0 0 1 6 3.5h11a1 1 0 0 1 1 1V19a1 1 0 0 1-1 1H6a2 2 0 0 1-2-2Z"/><path d="M8 3.5v17"/></svg></div>
+          <div style="flex:1;"><div class="body-text">Read</div><div class="caption">20 pages · Evening</div></div>
+          <div class="habit-check habit-check--pending"></div>
+        </div>
+        <span class="variant-label" style="align-self: flex-start;">Pending — plain ink-35 outline, no fill</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Variants — ghost (empty state / add action)</h2>
+      <div class="demo on-bg">
+        <div class="habit-row habit-row--ghost" style="width: 340px;">
+          <svg class="icon" viewBox="0 0 24 24" style="width:20px;height:20px;"><path d="M12 5v14M5 12h14"/></svg>
+          <span class="body-text" style="color: var(--color-muted);">Add a habit</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Guidelines</h2>
+      <ul class="guidelines">
+        <li>One row per habit, stacked in a vertical list with a 10px gap (see the <a href="../patterns/habit-list.html">Habit list</a> pattern).</li>
+        <li>Icon reflects the habit's category (clock for time-based, droplet for hydration, book for reading, etc.) — pick something recognizable at 20px, not decorative.</li>
+        <li>The check control only fills accent-primary when the habit is actually completed for today; otherwise it stays a plain outline — never a third "in progress" state.</li>
+        <li>The ghost row (dashed border, no background) is reserved for the "add a habit" action — don't reuse that style for anything else.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Code</h2>
+      <div class="code-block">&lt;div class="habit-row"&gt;
+  &lt;div class="habit-icon"&gt;&lt;svg class="icon"&gt;...&lt;/svg&gt;&lt;/div&gt;
+  &lt;div style="flex:1"&gt;
+    &lt;div class="body-text"&gt;Meditate&lt;/div&gt;
+    &lt;div class="caption"&gt;10 min · Morning&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="habit-check habit-check--done"&gt;&lt;svg class="icon"&gt;...&lt;/svg&gt;&lt;/div&gt;
+&lt;/div&gt;</div>
+    </section>
+  </main>
+</div>
+<script src="../nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+/*
+  Shared chrome for the design-system documentation site (nav, sections,
+  demo containers, card grids). Separate from components.css, which is
+  the app's own component library — this file is documentation-only.
+*/
+
+body { display: block; }
+.layout { display: flex; align-items: flex-start; }
+
+.sidebar {
+  position: fixed; left: 0; top: 0; bottom: 0; width: 220px; flex-shrink: 0;
+  padding: 32px 20px; display: flex; flex-direction: column; gap: 2px;
+  border-right: 1px solid var(--color-ink-15); background: var(--color-bg);
+  overflow-y: auto;
+}
+.sidebar .brand {
+  font-size: var(--text-title); font-weight: var(--font-weight-semibold);
+  color: var(--color-ink); margin-bottom: 20px; letter-spacing: -0.02em;
+  text-decoration: none; display: block;
+}
+.sidebar .group-label {
+  font-size: var(--text-caption); font-weight: var(--font-weight-semibold);
+  color: var(--color-muted); text-transform: uppercase; letter-spacing: 0.08em;
+  margin: 16px 0 4px; padding: 0 8px;
+}
+.sidebar .group-label:first-of-type { margin-top: 0; }
+.sidebar a.nav-link {
+  color: var(--color-muted); text-decoration: none; font-size: var(--text-label);
+  font-weight: var(--font-weight-medium); padding: 6px 8px; border-radius: var(--radius-sm);
+}
+.sidebar a.nav-link:hover { background: var(--color-ink-8); color: var(--color-ink); }
+.sidebar a.nav-link.active { background: var(--color-ink); color: var(--color-bg); }
+
+main { flex: 1; padding: 48px 56px 120px; max-width: 1040px; margin-left: 220px; }
+
+.eyebrow { font-size: var(--text-label); font-weight: var(--font-weight-semibold); letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-muted); }
+.page-title { font-size: var(--text-display); font-weight: var(--font-weight-semibold); letter-spacing: -0.02em; color: var(--color-ink); margin: 6px 0 8px; }
+.page-lede { color: var(--color-muted); font-size: var(--text-body); margin: 0 0 40px; max-width: 620px; }
+
+section { margin-bottom: 56px; scroll-margin-top: 24px; }
+section h2 { font-size: var(--text-title); font-weight: var(--font-weight-semibold); margin: 0 0 8px; color: var(--color-ink); }
+section > p.lede { color: var(--color-muted); font-size: var(--text-body); margin: 0 0 20px; }
+
+.grid { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.swatch { width: 160px; border-radius: var(--radius-md); border: 1px solid var(--color-ink-15); overflow: hidden; }
+.swatch .fill { height: 72px; }
+.swatch .info { padding: 12px; background: var(--color-surface); }
+.swatch .name { font-size: var(--text-label); font-weight: var(--font-weight-semibold); color: var(--color-ink); display: block; }
+.swatch .hex { font-size: var(--text-caption); color: var(--color-muted); }
+
+.tint { width: 150px; height: 96px; border-radius: var(--radius-md); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
+.tint.on-light { border: 1px solid var(--color-ink-15); }
+.tint.on-dark { background: var(--color-ink); }
+.tint .chip { width: 40px; height: 40px; border-radius: var(--radius-sm); }
+.tint .label { font-size: var(--text-caption); font-weight: var(--font-weight-medium); }
+
+.type-card { background: var(--color-surface); border-radius: var(--radius-md); padding: 20px; display: flex; flex-direction: column; gap: 16px; }
+.type-row { display: flex; align-items: center; gap: 16px; }
+.type-row .sample { width: 280px; flex-shrink: 0; color: var(--color-ink); }
+.type-row .desc { color: var(--color-muted); font-size: var(--text-label); }
+
+.space-row { display: flex; align-items: flex-end; gap: 20px; }
+.space-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.space-item .bar { width: 24px; background: var(--color-ink); border-radius: 2px; }
+.space-item .label { font-size: var(--text-caption); color: var(--color-muted); }
+
+.radius-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.radius-item .block { width: 64px; height: 64px; background: var(--color-ink); }
+.radius-item .label { font-size: var(--text-caption); color: var(--color-muted); }
+
+/* Component/pattern detail pages */
+.demo { background: var(--color-surface); border-radius: var(--radius-md); padding: 24px; display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; }
+.demo.on-bg { background: var(--color-bg); border: 1px solid var(--color-ink-15); }
+.variant-label { font-size: var(--text-caption); color: var(--color-muted); margin-top: 8px; text-align: center; }
+.variant { display: flex; flex-direction: column; align-items: center; }
+
+.guidelines { display: flex; flex-direction: column; gap: 10px; padding: 0; margin: 0; list-style: none; }
+.guidelines li { display: flex; gap: 10px; font-size: var(--text-body); color: var(--color-ink); line-height: 1.5; }
+.guidelines li::before { content: "—"; color: var(--color-ink-35); flex-shrink: 0; }
+
+.code-block {
+  background: var(--color-ink); color: var(--color-snow-65); border-radius: var(--radius-md);
+  padding: 16px 20px; font-family: "SF Mono", Menlo, monospace; font-size: 13px;
+  line-height: 1.6; overflow-x: auto; white-space: pre;
+}
+
+/* Index (card grid) pages */
+.card-grid { display: flex; flex-wrap: wrap; gap: 16px; }
+.card-tile {
+  display: block; width: 220px; padding: 20px; border-radius: var(--radius-md);
+  background: var(--color-surface); border: 1px solid var(--color-ink-15);
+  text-decoration: none; color: inherit;
+}
+.card-tile .name { font-size: var(--text-body); font-weight: var(--font-weight-semibold); color: var(--color-ink); display: block; margin-bottom: 4px; }
+.card-tile .desc { font-size: var(--text-label); color: var(--color-muted); }

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Habit list — Patterns</title>
+<script>const NAV_BASE = "../";</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Moderustic:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+<link rel="stylesheet" href="../docs.css">
+</head>
+<body>
+<div class="layout">
+  <nav class="sidebar" id="nav"></nav>
+  <main>
+    <span class="eyebrow">Pattern</span>
+    <h1 class="page-title">Habit list</h1>
+    <p class="page-lede">A vertical stack of <a href="../components/habit-row.html">Habit rows</a>, capped with the "add a habit" ghost row.</p>
+
+    <section>
+      <h2>Preview</h2>
+      <div class="demo on-bg">
+        <ul class="habit-list" style="list-style: none; margin: 0; width: 340px;">
+          <li class="habit-row">
+            <div class="habit-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l2.5 2.5"/></svg></div>
+            <div style="flex:1;"><div class="body-text">Meditate</div><div class="caption">10 min · Morning</div></div>
+            <div class="habit-check habit-check--done"><svg class="icon" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div>
+          </li>
+          <li class="habit-row">
+            <div class="habit-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M12 2.5s6 7 6 11.5a6 6 0 1 1-12 0c0-4.5 6-11.5 6-11.5Z"/></svg></div>
+            <div style="flex:1;"><div class="body-text">Drink water</div><div class="caption">8 glasses · All day</div></div>
+            <div class="habit-check habit-check--done"><svg class="icon" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div>
+          </li>
+          <li class="habit-row">
+            <div class="habit-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M4 5.5A2 2 0 0 1 6 3.5h11a1 1 0 0 1 1 1V19a1 1 0 0 1-1 1H6a2 2 0 0 1-2-2Z"/><path d="M8 3.5v17"/></svg></div>
+            <div style="flex:1;"><div class="body-text">Read</div><div class="caption">20 pages · Evening</div></div>
+            <div class="habit-check habit-check--pending"></div>
+          </li>
+          <li class="habit-row habit-row--ghost">
+            <svg class="icon" viewBox="0 0 24 24" style="width:20px;height:20px;"><path d="M12 5v14M5 12h14"/></svg>
+            <span class="body-text" style="color: var(--color-muted);">Add a habit</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Guidelines</h2>
+      <ul class="guidelines">
+        <li>10px gap between rows; the ghost "add" row is always last, never first or mixed in between real habits.</li>
+        <li>Order habits by time of day where possible (morning → evening) rather than by completion state.</li>
+        <li>No pagination or scrolling truncation planned — if the list grows very long, that's a future design decision, not something this pattern currently handles.</li>
+      </ul>
+    </section>
+  </main>
+</div>
+<script src="../nav.js"></script>
+</body>
+</html>

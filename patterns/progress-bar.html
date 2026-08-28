@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Progress bar — Patterns</title>
+<script>const NAV_BASE = "../";</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Moderustic:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+<link rel="stylesheet" href="../docs.css">
+</head>
+<body>
+<div class="layout">
+  <nav class="sidebar" id="nav"></nav>
+  <main>
+    <span class="eyebrow">Pattern</span>
+    <h1 class="page-title">Progress bar</h1>
+    <p class="page-lede">A labeled track + fill, used for per-habit completion in the Stats screen's "By habit" section.</p>
+
+    <section>
+      <h2>Preview</h2>
+      <div class="demo on-bg">
+        <div style="max-width: 300px; display:flex; flex-direction:column; gap:6px;">
+          <div style="display:flex; justify-content:space-between;"><span class="body-text">Drink water</span><span class="caption">86%</span></div>
+          <div class="progress-track"><div class="progress-fill" style="width:86%;"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Variants</h2>
+      <div class="demo on-bg" style="flex-direction: column; gap: 16px;">
+        <div style="max-width: 300px; display:flex; flex-direction:column; gap:6px;">
+          <div style="display:flex; justify-content:space-between;"><span class="body-text">Meditate</span><span class="caption">100%</span></div>
+          <div class="progress-track"><div class="progress-fill" style="width:100%;"></div></div>
+        </div>
+        <div style="max-width: 300px; display:flex; flex-direction:column; gap:6px;">
+          <div style="display:flex; justify-content:space-between;"><span class="body-text">Read</span><span class="caption">57%</span></div>
+          <div class="progress-track"><div class="progress-fill" style="width:57%;"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Guidelines</h2>
+      <ul class="guidelines">
+        <li>Fill is always <code>--color-accent-secondary</code> — this is the one progress indicator in the app that doesn't use accent-primary (that's reserved for the ring on Home and the weekly chart's highlighted bar).</li>
+        <li>Label + percentage sit above the bar, never inside or overlapping it.</li>
+        <li>Track is <code>--color-ink-8</code>, full width of its container, 6px tall — don't resize per instance.</li>
+      </ul>
+    </section>
+  </main>
+</div>
+<script src="../nav.js"></script>
+</body>
+</html>

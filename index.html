@@ -2,34 +2,102 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Habit Tracker — Design System</title>
+<title>Design System — Habit Tracker</title>
+<script>const NAV_BASE = "";</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Moderustic:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="tokens.css">
-<style>
-  body { justify-content: flex-start; padding: 48px; font-family: var(--font-sans); }
-  h1 { font-size: var(--text-display); font-weight: var(--font-weight-semibold); letter-spacing: var(--tracking-tight); margin: 0 0 8px; }
-  p { color: var(--color-muted); margin: 0 0 32px; }
-  .links { display: flex; gap: 16px; }
-  a.screen-link {
-    display: block; width: 160px; padding: 16px; text-align: center;
-    background: var(--color-surface); border-radius: var(--radius-md);
-    text-decoration: none; color: var(--color-ink); font-weight: var(--font-weight-medium);
-    border: 1px solid var(--color-ink-15);
-  }
-</style>
+<link rel="stylesheet" href="components.css">
+<link rel="stylesheet" href="docs.css">
 </head>
 <body>
-<div>
-  <h1>Habit Tracker</h1>
-  <p>Design system preview — source of truth for the Pencil design file.</p>
-  <div class="links">
-    <a class="screen-link" href="styleguide.html">Design System</a>
-    <a class="screen-link" href="home.html">Home</a>
-    <a class="screen-link" href="stats.html">Stats</a>
-    <a class="screen-link" href="profile.html">Profile</a>
-  </div>
+<div class="layout">
+  <nav class="sidebar" id="nav"></nav>
+
+  <main>
+    <span class="eyebrow">Habit Tracker</span>
+    <h1 class="page-title">Design System</h1>
+    <p class="page-lede">Source of truth for the app's tokens, components, and patterns — kept in sync with the Pencil design file. Browse Foundations below, or jump into Components, Patterns, and Screens.</p>
+
+    <section id="colors">
+      <h2>Colors</h2>
+      <p class="lede">Core palette, then opacity-derived tints — no separate hex values, just the core colors at reduced alpha.</p>
+
+      <div class="grid" style="margin-bottom: 12px;">
+        <div class="swatch"><div class="fill" style="background: var(--color-bg);"></div><div class="info"><span class="name">bg</span><span class="hex">#F3F3F3</span></div></div>
+        <div class="swatch"><div class="fill" style="background: var(--color-surface);"></div><div class="info"><span class="name">surface</span><span class="hex">#FFFFFF</span></div></div>
+        <div class="swatch"><div class="fill" style="background: var(--color-ink);"></div><div class="info"><span class="name">ink</span><span class="hex">#1F1F1F · primary</span></div></div>
+        <div class="swatch"><div class="fill" style="background: var(--color-muted);"></div><div class="info"><span class="name">muted</span><span class="hex">#4C4C4C · secondary text</span></div></div>
+        <div class="swatch"><div class="fill" style="background: var(--color-accent-primary);"></div><div class="info"><span class="name">accent primary</span><span class="hex">#D800A0 · sparingly</span></div></div>
+        <div class="swatch"><div class="fill" style="background: var(--color-accent-secondary);"></div><div class="info"><span class="name">accent secondary</span><span class="hex">#370026 · surfaces</span></div></div>
+      </div>
+
+      <div class="grid">
+        <div class="tint on-light"><div class="chip" style="background: var(--color-ink-8);"></div><span class="label" style="color: var(--color-ink);">ink-8 · chips</span></div>
+        <div class="tint on-light"><div class="chip" style="background: var(--color-ink-15);"></div><span class="label" style="color: var(--color-ink);">ink-15 · borders</span></div>
+        <div class="tint on-light"><div class="chip" style="background: var(--color-ink-35);"></div><span class="label" style="color: var(--color-ink);">ink-35 · inactive</span></div>
+        <div class="tint on-dark"><div class="chip" style="background: var(--color-snow-65);"></div><span class="label" style="color: var(--color-bg);">snow-65 · text on ink</span></div>
+        <div class="tint on-dark"><div class="chip" style="background: var(--color-snow-15);"></div><span class="label" style="color: var(--color-bg);">snow-15 · track on ink</span></div>
+      </div>
+    </section>
+
+    <section id="typography">
+      <h2>Typography — Moderustic</h2>
+      <p class="lede">Five sizes, three weights. Tight tracking on the display size, wide tracking on uppercase labels.</p>
+      <div class="type-card">
+        <div class="type-row"><span class="sample" style="font-size: var(--text-display); font-weight: var(--font-weight-semibold); letter-spacing: -0.02em;">Display 32</span><span class="desc">semibold · tight tracking · greeting, hero numbers</span></div>
+        <div class="type-row"><span class="sample" style="font-size: var(--text-title); font-weight: var(--font-weight-semibold);">Title 22</span><span class="desc">semibold · card headlines, stat values</span></div>
+        <div class="type-row"><span class="sample" style="font-size: var(--text-body); font-weight: var(--font-weight-medium);">Body 15</span><span class="desc">medium · list labels, primary content</span></div>
+        <div class="type-row"><span class="sample" style="font-size: var(--text-label); font-weight: var(--font-weight-semibold); letter-spacing: 0.08em; text-transform: uppercase;">Label 13</span><span class="desc">semibold uppercase · section labels; regular · captions</span></div>
+        <div class="type-row"><span class="sample" style="font-size: var(--text-caption); font-weight: var(--font-weight-medium);">Caption 11</span><span class="desc">medium/semibold · tab bar labels only</span></div>
+      </div>
+    </section>
+
+    <section id="spacing">
+      <h2>Spacing &amp; radius</h2>
+      <p class="lede">Spacing isn't tokenized as CSS variables yet — these are the actual gap/padding values in use across <code>components.css</code>, shown here for reference.</p>
+      <div class="space-row" style="margin-bottom: 32px;">
+        <div class="space-item"><div class="bar" style="height: 4px;"></div><span class="label">4</span></div>
+        <div class="space-item"><div class="bar" style="height: 10px;"></div><span class="label">10</span></div>
+        <div class="space-item"><div class="bar" style="height: 14px;"></div><span class="label">14</span></div>
+        <div class="space-item"><div class="bar" style="height: 16px;"></div><span class="label">16</span></div>
+        <div class="space-item"><div class="bar" style="height: 22px;"></div><span class="label">22</span></div>
+        <div class="space-item"><div class="bar" style="height: 24px;"></div><span class="label">24</span></div>
+      </div>
+      <div class="grid">
+        <div class="radius-item"><div class="block" style="border-radius: var(--radius-sm);"></div><span class="label">sm 12 · chips</span></div>
+        <div class="radius-item"><div class="block" style="border-radius: var(--radius-md);"></div><span class="label">md 16 · rows</span></div>
+        <div class="radius-item"><div class="block" style="border-radius: var(--radius-lg);"></div><span class="label">lg 20 · hero cards</span></div>
+        <div class="radius-item"><div class="block" style="border-radius: var(--radius-full);"></div><span class="label">full · avatars, controls</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Components</h2>
+      <p class="lede">Atomic, reusable elements — each with its own page (preview, variants, guidelines, code).</p>
+      <div class="card-grid">
+        <a class="card-tile" href="components/index.html"><span class="name">Browse all →</span><span class="desc">Avatar, Stat tile, Habit row, Settings row, Card</span></a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Patterns</h2>
+      <p class="lede">Composed, structural groupings built from components.</p>
+      <div class="card-grid">
+        <a class="card-tile" href="patterns/index.html"><span class="name">Browse all →</span><span class="desc">Status bar, Tab bar, Habit list, Settings list, Progress bar</span></a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Screens</h2>
+      <p class="lede">Full app screens assembled from the patterns above.</p>
+      <div class="card-grid">
+        <a class="card-tile" href="screens/index.html"><span class="name">Browse all →</span><span class="desc">Home, Stats, Profile</span></a>
+      </div>
+    </section>
+  </main>
 </div>
+<script src="nav.js"></script>
 </body>
 </html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Stat tile — Components</title>
+<script>const NAV_BASE = "../";</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Moderustic:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+<link rel="stylesheet" href="../docs.css">
+</head>
+<body>
+<div class="layout">
+  <nav class="sidebar" id="nav"></nav>
+  <main>
+    <span class="eyebrow">Component</span>
+    <h1 class="page-title">Stat tile</h1>
+    <p class="page-lede">A single number with a caption underneath, used for at-a-glance metrics.</p>
+
+    <section>
+      <h2>Preview</h2>
+      <div class="demo on-bg">
+        <div class="stat-tile" style="width: 140px;"><span class="value">12</span><span class="caption">Day streak</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Variants</h2>
+      <div class="demo on-bg">
+        <div class="variant"><div class="stat-tile" style="width: 140px;"><span class="value">84%</span><span class="caption">Completion</span></div><span class="variant-label">Percentage value</span></div>
+        <div class="variant"><div class="stat-tile" style="width: 140px;"><span class="value">Mar</span><span class="caption">Member since</span></div><span class="variant-label">Text value</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Guidelines</h2>
+      <ul class="guidelines">
+        <li>Value accepts any short content — a number, percentage, or short text — always Title 22/semibold.</li>
+        <li>Used 3-up in a row with a 10px gap (see the Stats and Profile screens); the tile itself fills the available width rather than a fixed size.</li>
+        <li>Never nest another card inside a stat tile — it's an endpoint, not a container.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Code</h2>
+      <div class="code-block">&lt;div class="stat-tile"&gt;
+  &lt;span class="value"&gt;12&lt;/span&gt;
+  &lt;span class="caption"&gt;Day streak&lt;/span&gt;
+&lt;/div&gt;</div>
+    </section>
+  </main>
+</div>
+<script src="../nav.js"></script>
+</body>
+</html>

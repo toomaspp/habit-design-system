@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Settings row — Components</title>
+<script>const NAV_BASE = "../";</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Moderustic:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+<link rel="stylesheet" href="../docs.css">
+</head>
+<body>
+<div class="layout">
+  <nav class="sidebar" id="nav"></nav>
+  <main>
+    <span class="eyebrow">Component</span>
+    <h1 class="page-title">Settings row</h1>
+    <p class="page-lede">Icon, label, and a trailing chevron — a single tappable settings entry.</p>
+
+    <section>
+      <h2>Preview</h2>
+      <div class="demo on-bg">
+        <div class="settings-list" style="width: 340px;">
+          <a class="settings-row" href="#" style="border-bottom: none;">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+            <span class="body-text">Notifications</span>
+            <svg class="icon chevron" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Guidelines</h2>
+      <ul class="guidelines">
+        <li>Icon is always accent-primary; the chevron is always ink-35 — that contrast is what signals "tappable" vs. "decorative."</li>
+        <li>Every row but the last in a list gets a 1px ink-8 bottom border; the last row has none (see <a href="../patterns/settings-list.html">Settings list</a>).</li>
+        <li>Label is always a single line — if a setting needs a description, that belongs on the destination screen, not wrapped into this row.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Code</h2>
+      <div class="code-block">&lt;a class="settings-row" href="#"&gt;
+  &lt;svg class="icon"&gt;...&lt;/svg&gt;
+  &lt;span class="body-text"&gt;Notifications&lt;/span&gt;
+  &lt;svg class="icon chevron"&gt;...&lt;/svg&gt;
+&lt;/a&gt;</div>
+    </section>
+  </main>
+</div>
+<script src="../nav.js"></script>
+</body>
+</html>

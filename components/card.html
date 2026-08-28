@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Card — Components</title>
+<script>const NAV_BASE = "../";</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Moderustic:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+<link rel="stylesheet" href="../docs.css">
+</head>
+<body>
+<div class="layout">
+  <nav class="sidebar" id="nav"></nav>
+  <main>
+    <span class="eyebrow">Component</span>
+    <h1 class="page-title">Card</h1>
+    <p class="page-lede">A generic surface container. Almost every grouped section on every screen is built on top of this.</p>
+
+    <section>
+      <h2>Preview</h2>
+      <div class="demo on-bg">
+        <div class="card" style="width: 220px;"><span class="body-text">Card</span><span class="caption">surface, radius-md</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Variants — Hero card</h2>
+      <div class="demo on-bg">
+        <div class="card--hero" style="margin: 0; width: 280px;">
+          <div><div class="eyebrow">Today's progress</div><div style="font-size: var(--text-title); font-weight: var(--font-weight-semibold); margin-top: 6px;">3 of 5 done</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Guidelines</h2>
+      <ul class="guidelines">
+        <li>Default card is <code>--color-surface</code> on <code>--radius-md</code> — this is the workhorse for stat groupings, chart containers, and lists.</li>
+        <li>The Hero variant (<code>.card--hero</code>) is reserved for exactly one thing per screen at most — the single "most important thing right now" callout (e.g. today's progress). Using it more than once per screen defeats the point.</li>
+        <li>Cards don't nest inside each other — a card's content is rows/text/charts, never another card.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Code</h2>
+      <div class="code-block">&lt;div class="card"&gt;...&lt;/div&gt;
+
+&lt;div class="card--hero"&gt;...&lt;/div&gt;</div>
+    </section>
+  </main>
+</div>
+<script src="../nav.js"></script>
+</body>
+</html>

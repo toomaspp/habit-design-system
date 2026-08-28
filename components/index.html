@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Components — Design System</title>
+<script>const NAV_BASE = "../";</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Moderustic:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+<link rel="stylesheet" href="../docs.css">
+</head>
+<body>
+<div class="layout">
+  <nav class="sidebar" id="nav"></nav>
+  <main>
+    <span class="eyebrow">Design System</span>
+    <h1 class="page-title">Components</h1>
+    <p class="page-lede">Atomic, reusable elements. Each one maps to a class in <code>components.css</code> and a reusable component in Pencil.</p>
+
+    <div class="card-grid">
+      <a class="card-tile" href="avatar.html"><span class="name">Avatar</span><span class="desc">Circular identity marker, two sizes</span></a>
+      <a class="card-tile" href="stat-tile.html"><span class="name">Stat tile</span><span class="desc">Value + caption, in a surface card</span></a>
+      <a class="card-tile" href="habit-row.html"><span class="name">Habit row</span><span class="desc">Icon, label, and a done/pending check control</span></a>
+      <a class="card-tile" href="settings-row.html"><span class="name">Settings row</span><span class="desc">Icon, label, and a chevron</span></a>
+      <a class="card-tile" href="card.html"><span class="name">Card</span><span class="desc">Generic surface container, plus the Hero variant</span></a>
+    </div>
+  </main>
+</div>
+<script src="../nav.js"></script>
+</body>
+</html>

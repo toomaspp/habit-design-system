@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Patterns — Design System</title>
+<script>const NAV_BASE = "../";</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Moderustic:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+<link rel="stylesheet" href="../docs.css">
+</head>
+<body>
+<div class="layout">
+  <nav class="sidebar" id="nav"></nav>
+  <main>
+    <span class="eyebrow">Design System</span>
+    <h1 class="page-title">Patterns</h1>
+    <p class="page-lede">Composed, structural groupings — how components combine into recurring UI sections.</p>
+
+    <div class="card-grid">
+      <a class="card-tile" href="status-bar.html"><span class="name">Status bar</span><span class="desc">Time + system icons, shared across every screen</span></a>
+      <a class="card-tile" href="tab-bar.html"><span class="name">Tab bar</span><span class="desc">Bottom navigation, active/inactive states</span></a>
+      <a class="card-tile" href="habit-list.html"><span class="name">Habit list</span><span class="desc">Stacked habit rows plus the "add" ghost row</span></a>
+      <a class="card-tile" href="settings-list.html"><span class="name">Settings list</span><span class="desc">Stacked settings rows in a single card</span></a>
+      <a class="card-tile" href="progress-bar.html"><span class="name">Progress bar</span><span class="desc">Labeled track + fill, used for per-habit completion</span></a>
+    </div>
+  </main>
+</div>
+<script src="../nav.js"></script>
+</body>
+</html>
